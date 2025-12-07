@@ -34,7 +34,10 @@ export default function Hero({ translations }) {
   const typingWords = [translations.tubing, translations.kawi, translations.mengening];
 
   return (
-    <section id="hero" className="relative isolate overflow-hidden px-4 py-24 md:py-28">
+    <section
+      id="hero"
+      className="relative isolate flex min-h-[78vh] items-center overflow-hidden px-4 pb-20 pt-28 md:min-h-[88vh] md:pb-28 md:pt-32 lg:min-h-screen"
+    >
       <div className="video-mask">
         <video autoPlay loop muted playsInline>
           <source src="/videos/hero-video.mp4" type="video/mp4" />
@@ -42,7 +45,7 @@ export default function Hero({ translations }) {
         <div className="hero-overlay-gradient absolute inset-0" />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col gap-8 text-white">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-8 text-white">
         <Chip color="warning" variant="flat" className="self-start bg-secondary text-dark">
           {translations.header_village}
         </Chip>

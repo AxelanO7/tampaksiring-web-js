@@ -50,31 +50,31 @@ export default function MainNavbar({ currentLanguage, onLanguageChange, translat
 
   return (
     <Navbar
-      className="bg-primary text-white"
+      className="sticky top-0 z-50 bg-primary/90 px-3 text-white backdrop-blur-md shadow-lg md:px-6"
       isBordered
-      maxWidth="xl"
+      maxWidth="full"
       shouldHideOnScroll
     >
-      <NavbarContent justify="start">
-        <NavbarMenuToggle className="text-white" aria-label="Toggle navigation" />
-        <NavbarBrand className="gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-secondary">
-            <MapPin size={20} />
+      <NavbarContent justify="start" className="w-full md:w-auto">
+        <NavbarMenuToggle className="mr-1 text-white md:hidden" aria-label="Toggle navigation" />
+        <NavbarBrand className="gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-secondary ring-1 ring-white/20">
+            <MapPin size={22} />
           </div>
           <div className="leading-tight">
             <p className="text-xs uppercase tracking-wide text-secondary">{translations?.header_village ?? 'Village'}</p>
-            <p className="font-heading text-lg">{translations?.siteTitle ?? 'Tampaksiring'}</p>
+            <p className="font-heading text-xl">{translations?.siteTitle ?? 'Tampaksiring'}</p>
           </div>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden gap-4 md:flex" justify="center">
+      <NavbarContent className="hidden gap-4 lg:flex" justify="center">
         {menuItems.map((item) => (
           <NavbarItem key={item.href}>
             <Link
               href={item.href}
               scroll={false}
-              className="font-semibold text-white transition hover:text-secondary"
+              className="rounded-full px-3 py-2 font-semibold text-white transition hover:bg-white/10 hover:text-secondary"
               onClick={(event) => {
                 event.preventDefault();
                 handleScroll(item.href);
@@ -86,7 +86,7 @@ export default function MainNavbar({ currentLanguage, onLanguageChange, translat
         ))}
       </NavbarContent>
 
-      <NavbarContent justify="end" className="gap-3">
+      <NavbarContent justify="end" className="hidden items-center gap-3 md:flex">
         <Dropdown>
           <DropdownTrigger>
             <Button
@@ -116,7 +116,7 @@ export default function MainNavbar({ currentLanguage, onLanguageChange, translat
         </Dropdown>
       </NavbarContent>
 
-      <NavbarMenu className="bg-primary/95 text-white">
+      <NavbarMenu className="bg-primary/95 text-white backdrop-blur-md">
         {menuItems.map((item) => (
           <NavbarMenuItem key={item.href}>
             <Link
@@ -132,6 +132,21 @@ export default function MainNavbar({ currentLanguage, onLanguageChange, translat
             </Link>
           </NavbarMenuItem>
         ))}
+        <NavbarMenuItem className="mt-4">
+          <p className="mb-2 text-sm font-semibold text-white/70">Languages</p>
+          <div className="flex gap-2">
+            {languages.map((lang) => (
+              <Button
+                key={lang.code}
+                size="sm"
+                className={`bg-white/10 text-white ${currentLanguage === lang.code ? 'border border-secondary' : ''}`}
+                onPress={() => onLanguageChange(lang.code)}
+              >
+                {lang.label}
+              </Button>
+            ))}
+          </div>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
