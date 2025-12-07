@@ -1,9 +1,9 @@
 // src/app/layout.js
 import './globals.css';
 import { Playfair_Display, Montserrat } from 'next/font/google';
-import Providers from './providers';
+import Script from 'next/script';
+import { Providers } from "./providers"; // Import Provider
 
-// Konfigurasi Font Google Sheets
 const playfair = Playfair_Display({
   subsets: ['latin'],
   weight: ['700'],
@@ -24,10 +24,29 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id">
-      <body className={`${playfair.variable} ${montserrat.variable}`}>
+      <head>
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+        />
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" 
+        />
+      </head>
+      <body 
+        className={`${playfair.variable} ${montserrat.variable}`}
+        suppressHydrationWarning={true}
+      >
+        {/* Bungkus children dengan Providers */}
         <Providers>
-          {children}
+            {children}
         </Providers>
+        
+        <Script 
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" 
+            strategy="lazyOnload" 
+        />
       </body>
     </html>
   );

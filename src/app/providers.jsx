@@ -1,14 +1,11 @@
-'use client';
+'use client'
 
-import { ToastProvider } from '@heroui/react';
-import { Toaster } from 'sonner';
+import {HeroUIProvider} from '@heroui/react'
 
-export default function Providers({ children }) {
+export function Providers({children}) {
   return (
-    <ToastProvider>
-      <Toaster richColors position="top-center" />
+    <HeroUIProvider>
       {children}
-    </ToastProvider>
-  );
+    </HeroUIProvider>
+  )
 }
-
