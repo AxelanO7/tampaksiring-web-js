@@ -198,7 +198,7 @@ export default function Home() {
               as={Link}
               href="#kontak"
               variant="flat"
-              color="foreground"
+              color="default"
               className="px-6 font-semibold text-default-700 dark:text-white/80"
             >
               {translation.h2_contact}
