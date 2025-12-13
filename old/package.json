@@ -1,0 +1,33 @@
+{
+  "name": "tampaksiring-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@heroui/react": "latest",
+    "@heroui/theme": "latest",
+    "aos": "^2.3.4",
+    "framer-motion": "^11.18.2",
+    "lucide-react": "^0.474.0",
+    "next": "latest",
+    "react": "19.2.3",
+    "react-dom": "19.2.0",
+    "react-hook-form": "^7.68.0",
+    "sonner": "^1.7.4",
+    "swiper": "^11.2.10",
+    "yet-another-react-lightbox": "^3.27.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "16.0.7",
+    "postcss": "^8.5.6",
+    "tailwindcss": "latest"
+  }
+}
