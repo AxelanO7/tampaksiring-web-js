@@ -194,7 +194,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-black/80 dark:from-black/80 dark:via-black/90 dark:to-black/95" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-5xl rounded-[48px] border border-slate-200/70 bg-white/90 px-6 py-12 shadow-[0_30px_80px_rgba(0,0,0,0.25)] backdrop-blur-3xl dark:border-white/10 dark:bg-slate-900/80 dark:text-white lg:px-10 lg:py-16">
+        <div className="relative z-10 mx-auto max-w-5xl rounded-[48px] border border-white/60 bg-white/60 px-6 py-12 shadow-[0_40px_90px_rgba(0,0,0,0.45)] backdrop-blur-[36px] dark:border-white/10 dark:bg-slate-900/70 dark:text-white lg:px-10 lg:py-16">
           <div className="flex flex-wrap items-center gap-3">
             <Chip
               color="warning"
@@ -223,13 +223,13 @@ export default function Home() {
 
           <h1
             className={clsx(
-              title({ size: "lg", color: "pink" }),
+              title({ size: "lg", color: "sunset" }),
               "text-slate-900 dark:text-white"
             )}
           >
             {translation.title}
           </h1>
-          <p className="max-w-3xl text-lg text-slate-700 dark:text-white/80">
+          <p className="max-w-3xl text-lg text-slate-800 dark:text-white/80">
             {translation.subtitle} <Typewriter words={typingWords} />.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -257,7 +257,7 @@ export default function Home() {
       <main className="mx-auto w-full max-w-6xl space-y-16 px-4 pb-16 pt-0 sm:px-6 lg:px-8">
         <section
           id="sejarah"
-          className="space-y-6 rounded-[40px] border border-slate-200/60 bg-white/95 px-8 py-10 text-slate-900 shadow-[0_30px_80px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
+          className="space-y-6 rounded-[40px] border border-white/30 bg-white/70 px-8 py-10 text-slate-800 shadow-[0_30px_80px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
         >
           <p className="text-xs uppercase tracking-[0.4em] text-secondary">
             {translation.destinations}
@@ -271,7 +271,7 @@ export default function Home() {
 
         <section
           id="campuhan"
-          className="space-y-8 rounded-[40px] border border-slate-200/60 bg-white/90 px-8 py-10 text-slate-900 shadow-[0_30px_80px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/90 dark:text-white"
+          className="space-y-8 rounded-[40px] border border-white/30 bg-white/75 px-8 py-10 text-slate-800 shadow-[0_30px_80px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/90 dark:text-white"
         >
           <div className="flex flex-wrap items-center justify-between gap-4">
             <Badge
@@ -351,7 +351,7 @@ export default function Home() {
           <section
             key={temple.id}
             id={temple.id}
-            className="space-y-4 rounded-[36px] border border-slate-200/60 bg-white/95 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
+            className="space-y-4 rounded-[36px] border border-white/30 bg-white/80 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
           >
             <div className="flex items-center justify-between">
               <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
@@ -380,7 +380,7 @@ export default function Home() {
 
         <section
           id="umkm"
-          className="space-y-6 rounded-[36px] border border-slate-200/60 bg-white/95 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.15)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
+          className="space-y-6 rounded-[36px] border border-white/30 bg-white/80 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.15)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
         >
           <div className="space-y-2">
             <p className="text-sm uppercase tracking-[0.4em] text-secondary">
@@ -397,7 +397,7 @@ export default function Home() {
             {products.map((product) => (
               <Card
                 key={product.title}
-                className="flex flex-col overflow-hidden rounded-3xl border border-slate-200/60 bg-white/90 text-slate-900 shadow-[0_20px_60px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/70 dark:text-white"
+                className="flex flex-col overflow-hidden rounded-3xl border border-white/30 bg-white/80 text-slate-800 shadow-[0_20px_60px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/70 dark:text-white"
               >
                 <CardHeader className="p-0">
                   <img
@@ -433,7 +433,7 @@ export default function Home() {
 
         <section
           id="galeri"
-          className="space-y-6 rounded-[36px] border border-slate-200/60 bg-white/95 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.15)] dark:border-white/10 dark:bg-slate-900/90 dark:text-white"
+          className="space-y-6 rounded-[36px] border border-white/30 bg-white/80 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.15)] dark:border-white/10 dark:bg-slate-900/90 dark:text-white"
         >
           <div className="flex items-baseline justify-between gap-4">
             <div>
@@ -452,7 +452,7 @@ export default function Home() {
             {galleryImages.map((image) => (
               <div
                 key={image}
-                className="overflow-hidden rounded-3xl border border-slate-200/60 bg-white/90 shadow-[0_20px_60px_rgba(0,0,0,0.25)] transition hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(0,0,0,0.35)] dark:border-white/10 dark:bg-slate-900/80"
+                className="overflow-hidden rounded-3xl border border-white/30 bg-white/80 shadow-[0_20px_60px_rgba(0,0,0,0.25)] transition hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(0,0,0,0.35)] dark:border-white/10 dark:bg-slate-900/80"
               >
                 <img
                   src={image}
@@ -466,7 +466,7 @@ export default function Home() {
 
         <section
           id="testimoni"
-          className="space-y-6 rounded-[36px] border border-slate-200/60 bg-white/95 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.15)] dark:border-white/10 dark:bg-slate-900/90 dark:text-white"
+          className="space-y-6 rounded-[36px] border border-white/30 bg-white/80 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.15)] dark:border-white/10 dark:bg-slate-900/90 dark:text-white"
         >
           <div>
             <p className="text-sm uppercase tracking-[0.4em] text-secondary">
@@ -480,7 +480,7 @@ export default function Home() {
             {testimonials.map((testimonial) => (
               <Card
                 key={testimonial.name}
-                className="h-full rounded-3xl border border-slate-200/60 bg-white/95 text-slate-900 shadow-[0_20px_60px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
+                className="h-full rounded-3xl border border-white/30 bg-white/85 text-slate-800 shadow-[0_20px_60px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
               >
                 <CardBody className="flex h-full flex-col">
                   <p className="text-lg text-slate-700 dark:text-slate-200">
@@ -500,7 +500,7 @@ export default function Home() {
 
         <section
           id="kontak"
-          className="rounded-[40px] border border-slate-200/60 bg-white/95 px-6 py-8 shadow-[0_30px_90px_rgba(0,0,0,0.35)] dark:border-white/10 dark:bg-slate-900/90 dark:text-white"
+          className="rounded-[40px] border border-white/30 bg-white/80 px-6 py-8 shadow-[0_30px_90px_rgba(0,0,0,0.35)] dark:border-white/10 dark:bg-slate-900/90 dark:text-white"
         >
           <div className="flex items-center justify-between gap-4">
             <div>
@@ -535,7 +535,7 @@ export default function Home() {
                 onChange={(event) =>
                   handleFormChange("name", event.target.value)
                 }
-                className="rounded-2xl border border-slate-300/70 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
+                className="rounded-2xl border border-slate-300/70 bg-white/90 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
               />
             </label>
             <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-slate-700 dark:text-white">
@@ -545,7 +545,7 @@ export default function Home() {
                 onChange={(event) =>
                   handleFormChange("phone", event.target.value)
                 }
-                className="rounded-2xl border border-slate-300/70 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
+                className="rounded-2xl border border-slate-300/70 bg-white/90 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
               />
             </label>
             <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-slate-700 dark:text-white">
@@ -555,7 +555,7 @@ export default function Home() {
                 onChange={(event) =>
                   handleFormChange("destination", event.target.value)
                 }
-                className="rounded-2xl border border-slate-300/70 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
+                className="rounded-2xl border border-slate-300/70 bg-white/90 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
               >
                 <option value="">{translation.form_option_default}</option>
                 {destinationOptions.map((option) => (
@@ -573,7 +573,7 @@ export default function Home() {
                 onChange={(event) =>
                   handleFormChange("message", event.target.value)
                 }
-                className="rounded-2xl border border-slate-300/70 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
+                className="rounded-2xl border border-slate-300/70 bg-white/90 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
               />
             </label>
             <div className="md:col-span-2">
