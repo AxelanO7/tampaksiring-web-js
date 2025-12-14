@@ -22,16 +22,16 @@ export const Navbar = () => {
     <HeroUINavbar
       maxWidth="full"
       position="sticky"
-      className="bg-white/80 backdrop-blur-md shadow-md dark:bg-dark/60"
+      className="z-50 bg-black text-white shadow-xl backdrop-blur-xl"
     >
-      <NavbarContent justify="start" className="gap-3">
-        <NavbarMenuToggle className="text-default-700 dark:text-default-200" />
+      <NavbarContent justify="start" className="gap-3 px-4">
+        <NavbarMenuToggle className="text-white" />
         <NavbarBrand as="li" className="gap-3">
           <NextLink
-            className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.35em]"
+            className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em]"
             href="#hero"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 text-black">
               <MapPinIcon className="h-5 w-5" />
             </div>
             Tampaksiring
@@ -39,26 +39,13 @@ export const Navbar = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent
-        justify="center"
-        className="hidden gap-3 text-sm font-semibold uppercase tracking-wide lg:flex"
-      >
-        {siteConfig.navItems.map((item) => (
-          <NavbarItem
-            key={item.href}
-            className="rounded-full px-3 py-2 transition hover:bg-primary/10 dark:hover:bg-primary/20"
-          >
-            <Link href={item.href}>{item.label}</Link>
-          </NavbarItem>
-        ))}
-      </NavbarContent>
-
-      <NavbarContent justify="end" className="flex items-center gap-3">
+      <NavbarContent justify="end" className="gap-3 px-4">
         <Button
           as="a"
           color="warning"
           variant="shadow"
-          className="hidden px-4 text-xs font-semibold text-dark md:flex"
+          size="sm"
+          className="hidden rounded-full px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-black md:flex"
           href={siteConfig.links.whatsapp}
         >
           WhatsApp
@@ -66,10 +53,13 @@ export const Navbar = () => {
         <ThemeSwitch />
       </NavbarContent>
 
-      <NavbarMenu className="bg-white/95 dark:bg-dark/90">
+      <NavbarMenu className="bg-black/90 text-white">
         {siteConfig.navItems.map((item) => (
           <NavbarMenuItem key={item.href}>
-            <Link className="block py-2 text-lg font-semibold" href={item.href}>
+            <Link
+              className="block py-2 text-lg font-semibold text-inherit"
+              href={item.href}
+            >
               {item.label}
             </Link>
           </NavbarMenuItem>

@@ -4,7 +4,6 @@ export const siteConfig = {
   name: "Tampaksiring",
   description: "Landing page crafted with Hero UI inspired by the Tampaksiring village experience.",
   navItems: [
-    { label: "Beranda", href: "#hero" },
     { label: "Sejarah", href: "#sejarah" },
     { label: "Tubing", href: "#campuhan" },
     { label: "Pura Kawi", href: "#kawi" },
