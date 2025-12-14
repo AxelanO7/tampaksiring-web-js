@@ -10,10 +10,17 @@ import clsx from "clsx";
 
 import { Footer } from "@/components/footer";
 import { title } from "@/components/primitives";
-import { translations, defaultLang, type LanguageCode } from "@/config/translations";
+import {
+  translations,
+  defaultLang,
+  type LanguageCode,
+} from "@/config/translations";
 
 const buildImageSet = (prefix: string, count: number) =>
-  Array.from({ length: count }, (_, index) => `/images/${prefix}-${index + 1}.jpg`);
+  Array.from(
+    { length: count },
+    (_, index) => `/images/${prefix}-${index + 1}.jpg`
+  );
 
 const kawiImages = buildImageSet("kawi", 10);
 const mengeningImages = buildImageSet("mengening", 10);
@@ -57,10 +64,27 @@ const products = [
 ];
 
 const testimonials = [
-  { name: "Anita", origin: "Jakarta", message: "Pengalaman tubing yang seru dan aman, pemandu ramah!" },
-  { name: "Michael", origin: "Singapore", message: "Gunung Kawi is breathtaking. The new tour layout is easy to follow." },
-  { name: "Wayan", origin: "Denpasar", message: "UMKM lokalnya keren, kopi dan madu wajib dibawa pulang." },
-  { name: "Sarah", origin: "Sydney", message: "Clean design and fast booking via WhatsApp. Love it!" },
+  {
+    name: "Anita",
+    origin: "Jakarta",
+    message: "Pengalaman tubing yang seru dan aman, pemandu ramah!",
+  },
+  {
+    name: "Michael",
+    origin: "Singapore",
+    message:
+      "Gunung Kawi is breathtaking. The new tour layout is easy to follow.",
+  },
+  {
+    name: "Wayan",
+    origin: "Denpasar",
+    message: "UMKM lokalnya keren, kopi dan madu wajib dibawa pulang.",
+  },
+  {
+    name: "Sarah",
+    origin: "Sydney",
+    message: "Clean design and fast booking via WhatsApp. Love it!",
+  },
 ];
 
 const features = ["li_tubing_1", "li_tubing_2", "li_tubing_3"] as const;
@@ -89,25 +113,30 @@ const Typewriter = ({ words }: { words: string[] }) => {
     return () => clearInterval(timer);
   }, [words]);
 
-  return (
-    <span className="text-amber-300 font-semibold">
-      {words[index]}
-    </span>
-  );
+  return <span className="text-amber-300 font-semibold">{words[index]}</span>;
 };
 
 export default function Home() {
   const [currentLanguage, setCurrentLanguage] = useState(defaultLang);
   const [formState, setFormState] = useState(initialFormState);
-  const [formStatus, setFormStatus] = useState<null | { type: "success" | "error"; message: string }>(null);
+  const [formStatus, setFormStatus] = useState<null | {
+    type: "success" | "error";
+    message: string;
+  }>(null);
 
-  const translation = useMemo(() => translations[currentLanguage], [currentLanguage]);
+  const translation = useMemo(
+    () => translations[currentLanguage],
+    [currentLanguage]
+  );
   const typingWords = useMemo(
     () => [translation.tubing, translation.kawi, translation.mengening],
-    [translation],
+    [translation]
   );
 
-  const handleFormChange = (field: keyof typeof initialFormState, value: string) => {
+  const handleFormChange = (
+    field: keyof typeof initialFormState,
+    value: string
+  ) => {
     setFormState((prev) => ({ ...prev, [field]: value }));
   };
 
@@ -122,14 +151,20 @@ export default function Home() {
 
     const sanitizedPhone = phone.replace(/\D/g, "");
     if (!sanitizedPhone) {
-      setFormStatus({ type: "error", message: "Masukkan nomor WhatsApp yang valid." });
+      setFormStatus({
+        type: "error",
+        message: "Masukkan nomor WhatsApp yang valid.",
+      });
       return;
     }
 
     const text = `Halo, saya ${name} ingin memesan paket ${destination}. ${message}`;
     const url = `https://wa.me/${sanitizedPhone}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
-    setFormStatus({ type: "success", message: "Permintaan Anda telah disiapkan di WhatsApp." });
+    setFormStatus({
+      type: "success",
+      message: "Permintaan Anda telah disiapkan di WhatsApp.",
+    });
     setFormState(initialFormState);
   };
 
@@ -177,7 +212,7 @@ export default function Home() {
                   className={clsx(
                     "rounded-full px-4 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.35em] transition text-slate-900 bg-slate-100/80 hover:bg-slate-200/80 dark:text-white dark:bg-white/20 dark:hover:bg-white/30",
                     currentLanguage === lang.code &&
-                      "bg-amber-400 text-slate-900 shadow-[0_0_20px_rgba(251,191,36,0.6)] dark:text-slate-900",
+                      "bg-amber-400 text-slate-900 shadow-[0_0_20px_rgba(251,191,36,0.6)] dark:text-slate-900"
                   )}
                 >
                   {lang.label}
@@ -186,7 +221,12 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className={clsx(title({ size: "lg", color: "pink" }), "text-slate-900 dark:text-white")}>
+          <h1
+            className={clsx(
+              title({ size: "lg", color: "pink" }),
+              "text-slate-900 dark:text-white"
+            )}
+          >
             {translation.title}
           </h1>
           <p className="max-w-3xl text-lg text-slate-700 dark:text-white/80">
@@ -204,9 +244,8 @@ export default function Home() {
             </Button>
             <Button
               as={Link}
-            href="#kontak"
+              href="#kontak"
               variant="flat"
-              color="foreground"
               className="px-6 font-semibold text-slate-900 dark:text-white"
             >
               {translation.h2_contact}
@@ -220,7 +259,9 @@ export default function Home() {
           id="sejarah"
           className="space-y-6 rounded-[40px] border border-slate-200/60 bg-white/95 px-8 py-10 text-slate-900 shadow-[0_30px_80px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
         >
-          <p className="text-xs uppercase tracking-[0.4em] text-secondary">{translation.destinations}</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-secondary">
+            {translation.destinations}
+          </p>
           <h2 className="text-3xl font-semibold">{translation.h2_history}</h2>
           <div className="grid gap-6 text-lg md:grid-cols-2">
             <p>{translation.p_history_1}</p>
@@ -240,11 +281,15 @@ export default function Home() {
             >
               {translation.destinations}
             </Badge>
-            <p className="text-sm text-slate-600 dark:text-white/70">{translation.p_tubing_1}</p>
+            <p className="text-sm text-slate-600 dark:text-white/70">
+              {translation.p_tubing_1}
+            </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="space-y-6">
-              <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">{translation.h2_tubing}</h2>
+              <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
+                {translation.h2_tubing}
+              </h2>
               <div className="grid gap-4 md:grid-cols-2">
                 {features.map((feature) => (
                   <div
@@ -269,8 +314,12 @@ export default function Home() {
             </div>
             <Card className="rounded-[32px] border-none bg-gradient-to-br from-primary/90 to-emerald-500/90 text-white shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
               <CardHeader className="rounded-[32px] p-6">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/80">Campuhan River</p>
-                <h3 className="mt-2 text-2xl font-semibold">{translation.h2_tubing}</h3>
+                <p className="text-xs uppercase tracking-[0.4em] text-white/80">
+                  Campuhan River
+                </p>
+                <h3 className="mt-2 text-2xl font-semibold">
+                  {translation.h2_tubing}
+                </h3>
               </CardHeader>
               <CardBody className="p-0">
                 <div className="h-[360px] overflow-hidden rounded-[32px]">
@@ -285,41 +334,64 @@ export default function Home() {
           </div>
         </section>
 
-        {[{ images: kawiImages, title: translation.h2_kawi, description: translation.p_kawi, id: "kawi" }, { images: mengeningImages, title: translation.h2_mengening, description: translation.p_mengening, id: "mengening" }].map(
-          (temple) => (
-            <section
-              key={temple.id}
-              id={temple.id}
-              className="space-y-4 rounded-[36px] border border-slate-200/60 bg-white/95 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
-            >
-              <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">{temple.title}</h3>
-                <span className="text-xs uppercase tracking-[0.4em] text-slate-500 dark:text-white/70">Tampaksiring</span>
-              </div>
-              <p className="text-slate-600 dark:text-slate-300">{temple.description}</p>
-              <div className="flex gap-4 overflow-x-auto rounded-[24px] py-2 scrollbar-thin scrollbar-thumb-slate-400/60 scrollbar-track-slate-200/40">
-                {temple.images.slice(0, 6).map((image) => (
-                  <div key={`${temple.id}-${image}`} className="min-w-[220px]">
-                    <img
-                      src={image}
-                      alt={temple.title}
-                      className="h-36 w-full rounded-[20px] object-cover shadow-lg"
-                    />
-                  </div>
-                ))}
-              </div>
-            </section>
-          ),
-        )}
+        {[
+          {
+            images: kawiImages,
+            title: translation.h2_kawi,
+            description: translation.p_kawi,
+            id: "kawi",
+          },
+          {
+            images: mengeningImages,
+            title: translation.h2_mengening,
+            description: translation.p_mengening,
+            id: "mengening",
+          },
+        ].map((temple) => (
+          <section
+            key={temple.id}
+            id={temple.id}
+            className="space-y-4 rounded-[36px] border border-slate-200/60 bg-white/95 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.2)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
+          >
+            <div className="flex items-center justify-between">
+              <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
+                {temple.title}
+              </h3>
+              <span className="text-xs uppercase tracking-[0.4em] text-slate-500 dark:text-white/70">
+                Tampaksiring
+              </span>
+            </div>
+            <p className="text-slate-600 dark:text-slate-300">
+              {temple.description}
+            </p>
+            <div className="flex gap-4 overflow-x-auto rounded-[24px] py-2 scrollbar-thin scrollbar-thumb-slate-400/60 scrollbar-track-slate-200/40">
+              {temple.images.slice(0, 6).map((image) => (
+                <div key={`${temple.id}-${image}`} className="min-w-[220px]">
+                  <img
+                    src={image}
+                    alt={temple.title}
+                    className="h-36 w-full rounded-[20px] object-cover shadow-lg"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
 
         <section
           id="umkm"
           className="space-y-6 rounded-[36px] border border-slate-200/60 bg-white/95 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.15)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
         >
           <div className="space-y-2">
-            <p className="text-sm uppercase tracking-[0.4em] text-secondary">{translation.umkm}</p>
-            <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">Jimbaran artisans</h2>
-            <p className="text-slate-600 dark:text-white/80">{translation.p_umkm}</p>
+            <p className="text-sm uppercase tracking-[0.4em] text-secondary">
+              {translation.umkm}
+            </p>
+            <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
+              Jimbaran artisans
+            </h2>
+            <p className="text-slate-600 dark:text-white/80">
+              {translation.p_umkm}
+            </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (
@@ -328,14 +400,22 @@ export default function Home() {
                 className="flex flex-col overflow-hidden rounded-3xl border border-slate-200/60 bg-white/90 text-slate-900 shadow-[0_20px_60px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/70 dark:text-white"
               >
                 <CardHeader className="p-0">
-                  <img src={product.image} alt={product.title} className="h-48 w-full object-cover" />
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="h-48 w-full object-cover"
+                  />
                 </CardHeader>
                 <CardBody className="space-y-3 px-5 py-6">
                   <div className="flex items-center justify-between">
                     <h3 className="text-xl font-semibold">{product.title}</h3>
-                    <span className="text-xs uppercase tracking-[0.35em] text-amber-500">Local</span>
+                    <span className="text-xs uppercase tracking-[0.35em] text-amber-500">
+                      Local
+                    </span>
                   </div>
-                  <p className="text-sm text-slate-600">{product.description}</p>
+                  <p className="text-sm text-slate-600">
+                    {product.description}
+                  </p>
                 </CardBody>
               </Card>
             ))}
@@ -357,8 +437,12 @@ export default function Home() {
         >
           <div className="flex items-baseline justify-between gap-4">
             <div>
-              <p className="text-sm uppercase tracking-[0.4em] text-secondary">{translation.gallery}</p>
-              <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">{translation.h2_gallery}</h2>
+              <p className="text-sm uppercase tracking-[0.4em] text-secondary">
+                {translation.gallery}
+              </p>
+              <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
+                {translation.h2_gallery}
+              </h2>
             </div>
             <p className="text-xs uppercase tracking-[0.35em] text-slate-600 dark:text-white/60">
               {galleryImages.length} snapshots
@@ -370,7 +454,11 @@ export default function Home() {
                 key={image}
                 className="overflow-hidden rounded-3xl border border-slate-200/60 bg-white/90 shadow-[0_20px_60px_rgba(0,0,0,0.25)] transition hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(0,0,0,0.35)] dark:border-white/10 dark:bg-slate-900/80"
               >
-                <img src={image} alt={translation.h2_gallery} className="h-64 w-full object-cover" />
+                <img
+                  src={image}
+                  alt={translation.h2_gallery}
+                  className="h-64 w-full object-cover"
+                />
               </div>
             ))}
           </div>
@@ -381,8 +469,12 @@ export default function Home() {
           className="space-y-6 rounded-[36px] border border-slate-200/60 bg-white/95 px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.15)] dark:border-white/10 dark:bg-slate-900/90 dark:text-white"
         >
           <div>
-            <p className="text-sm uppercase tracking-[0.4em] text-secondary">{translation.testimonials}</p>
-            <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">{translation.h2_testi}</h2>
+            <p className="text-sm uppercase tracking-[0.4em] text-secondary">
+              {translation.testimonials}
+            </p>
+            <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
+              {translation.h2_testi}
+            </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((testimonial) => (
@@ -391,10 +483,14 @@ export default function Home() {
                 className="h-full rounded-3xl border border-slate-200/60 bg-white/95 text-slate-900 shadow-[0_20px_60px_rgba(0,0,0,0.25)] dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
               >
                 <CardBody className="flex h-full flex-col">
-                  <p className="text-lg text-slate-700 dark:text-slate-200">“{testimonial.message}”</p>
+                  <p className="text-lg text-slate-700 dark:text-slate-200">
+                    “{testimonial.message}”
+                  </p>
                   <div className="mt-6 text-sm font-semibold text-slate-900 dark:text-white">
                     {testimonial.name}
-                    <span className="block text-xs font-normal text-slate-500 dark:text-white/60">{testimonial.origin}</span>
+                    <span className="block text-xs font-normal text-slate-500 dark:text-white/60">
+                      {testimonial.origin}
+                    </span>
                   </div>
                 </CardBody>
               </Card>
@@ -408,8 +504,12 @@ export default function Home() {
         >
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-sm uppercase tracking-[0.4em] text-secondary">{translation.h2_contact}</p>
-              <h3 className="text-3xl font-semibold text-slate-900 dark:text-white">{translation.h3_contact_form}</h3>
+              <p className="text-sm uppercase tracking-[0.4em] text-secondary">
+                {translation.h2_contact}
+              </p>
+              <h3 className="text-3xl font-semibold text-slate-900 dark:text-white">
+                {translation.h3_contact_form}
+              </h3>
             </div>
             {formStatus && (
               <p
@@ -417,19 +517,24 @@ export default function Home() {
                   "rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em]",
                   formStatus.type === "success"
                     ? "bg-emerald-100 text-emerald-700"
-                    : "bg-rose-100 text-rose-700",
+                    : "bg-rose-100 text-rose-700"
                 )}
               >
                 {formStatus.message}
               </p>
             )}
           </div>
-          <form onSubmit={handleSubmit} className="mt-6 grid gap-4 md:grid-cols-2">
+          <form
+            onSubmit={handleSubmit}
+            className="mt-6 grid gap-4 md:grid-cols-2"
+          >
             <label className="flex flex-col gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-slate-700 dark:text-white">
               {translation.form_placeholder_name}
               <input
                 value={formState.name}
-                onChange={(event) => handleFormChange("name", event.target.value)}
+                onChange={(event) =>
+                  handleFormChange("name", event.target.value)
+                }
                 className="rounded-2xl border border-slate-300/70 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
               />
             </label>
@@ -437,7 +542,9 @@ export default function Home() {
               {translation.form_placeholder_wa}
               <input
                 value={formState.phone}
-                onChange={(event) => handleFormChange("phone", event.target.value)}
+                onChange={(event) =>
+                  handleFormChange("phone", event.target.value)
+                }
                 className="rounded-2xl border border-slate-300/70 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
               />
             </label>
@@ -445,7 +552,9 @@ export default function Home() {
               {translation.form_option_default}
               <select
                 value={formState.destination}
-                onChange={(event) => handleFormChange("destination", event.target.value)}
+                onChange={(event) =>
+                  handleFormChange("destination", event.target.value)
+                }
                 className="rounded-2xl border border-slate-300/70 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
               >
                 <option value="">{translation.form_option_default}</option>
@@ -461,7 +570,9 @@ export default function Home() {
               <textarea
                 rows={4}
                 value={formState.message}
-                onChange={(event) => handleFormChange("message", event.target.value)}
+                onChange={(event) =>
+                  handleFormChange("message", event.target.value)
+                }
                 className="rounded-2xl border border-slate-300/70 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/40"
               />
             </label>
