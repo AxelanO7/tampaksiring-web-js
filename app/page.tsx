@@ -387,7 +387,7 @@ export default function Home() {
               {translation.umkm}
             </p>
             <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
-              Jimbaran artisans
+              {translation.umkm_artisans}
             </h2>
             <p className="text-slate-600 dark:text-white/80">
               {translation.p_umkm}
@@ -413,9 +413,6 @@ export default function Home() {
                       Local
                     </span>
                   </div>
-                  <p className="text-sm text-slate-600">
-                    {product.description}
-                  </p>
                 </CardBody>
               </Card>
             ))}

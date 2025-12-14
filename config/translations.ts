@@ -34,6 +34,7 @@ export const translations = {
       'Mengening Temple is famed for its sacred spring. The name comes from "ening", which means clear, reflecting the holy water used for purification ceremonies.',
     h2_umkm: "Support Local Tampaksiring UMKM",
     p_umkm: "Browse artisan products made by Tampaksiring families to help grow the local economy.",
+    umkm_artisans: "Tampak Siring artisans",
     btn_umkm: "Contact for product info",
     h2_gallery: "Tampaksiring Charm Gallery",
     h2_testi: "What Our Visitors Say",
@@ -89,6 +90,7 @@ export const translations = {
     h2_umkm: "Dukung UMKM lokal Tampaksiring",
     p_umkm:
       "Jelajahi produk kerajinan dan pangan unik yang dibuat oleh masyarakat Tampaksiring untuk membantu ekonomi desa.",
+    umkm_artisans: "Artisan Tampak Siring",
     btn_umkm: "Hubungi untuk info produk",
     h2_gallery: "Galeri pesona Tampaksiring",
     h2_testi: "Apa kata pengunjung kami",
