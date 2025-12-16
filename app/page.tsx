@@ -42,12 +42,12 @@ const products = [
     image: "/images/umkm-item-2.jpg",
   },
   {
-    title: "Tenun Ikat",
+    title: "Rajutan Baju & Tas",
     description: "Traditional woven fabric with gold accent.",
     image: "/images/umkm-item-3.jpg",
   },
   {
-    title: "Madu Hutan",
+    title: "Rajutan Baju",
     description: "Pure forest honey harvested sustainably.",
     image: "/images/umkm-item-4.jpg",
   },
