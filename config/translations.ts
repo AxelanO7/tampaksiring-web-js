@@ -90,7 +90,7 @@ export const translations = {
     h2_umkm: "Dukung UMKM lokal Tampaksiring",
     p_umkm:
       "Jelajahi produk kerajinan dan pangan unik yang dibuat oleh masyarakat Tampaksiring untuk membantu ekonomi desa.",
-    umkm_artisans: "Artisan Tampak Siring",
+    umkm_artisans: "UMKM Lokal Tampaksiring",
     btn_umkm: "Hubungi untuk info produk",
     h2_gallery: "Galeri pesona Tampaksiring",
     h2_testi: "Apa kata pengunjung kami",
