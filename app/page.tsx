@@ -52,12 +52,12 @@ const products = [
     image: "/images/umkm-item-4.jpg",
   },
   {
-    title: "Sabun Organik",
+    title: "Kerajinan Kelapa",
     description: "Herbal soap infused with local botanicals.",
     image: "/images/umkm-item-6.jpg",
   },
   {
-    title: "Topeng Kayu",
+    title: "Pahatan Kayu",
     description: "Hand-carved masks celebrating local stories.",
     image: "/images/umkm-item-8.jpg",
   },
