@@ -110,7 +110,7 @@ export const Footer = ({ translations }: FooterProps) => {
         </div>
         <div className="space-y-3">
           <p className="text-xs uppercase tracking-[0.4em] text-amber-400">
-            Ikuti kami di media sosial
+            Ikutin kami di media sosial
           </p>
           <div className="flex gap-3">
             {socials.map((social) => (
