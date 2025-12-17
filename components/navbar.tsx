@@ -15,7 +15,6 @@ import NextLink from "next/link";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { MapPinIcon } from "@/components/icons";
 
 export const Navbar = () => {
   return (
@@ -31,8 +30,17 @@ export const Navbar = () => {
             className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em]"
             href="#hero"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 text-black">
-              <MapPinIcon className="h-5 w-5" />
+            {/* Bagian Logo Desa Menggunakan Gambar logo-8.png */}
+            <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full">
+              <img 
+                src="/images/logo-8.png" 
+                alt="Logo Desa Tampaksiring" 
+                className="h-full w-full object-contain"
+                // Menambahkan onError jika gambar tidak ditemukan
+                onError={(e) => {
+                  e.currentTarget.src = "https://via.placeholder.com/150?text=Desa";
+                }}
+              />
             </div>
             Desa Wisata Tampaksiring
           </NextLink>
