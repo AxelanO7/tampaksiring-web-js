@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Tampaksiring",
+  name: "Desa Wisata Tampaksiring",
   description: "Landing page crafted with Hero UI inspired by the Tampaksiring village experience.",
   navItems: [
     { label: "Sejarah", href: "#sejarah" },
