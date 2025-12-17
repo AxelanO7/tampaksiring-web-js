@@ -32,17 +32,17 @@ const galleryImages = [
 
 const products = [
   {
-    title: "Kerajinan Kayu",
+    title: "Tenunan Baju",
     description: "Handmade wood craft from local artisans.",
     image: "/images/umkm-item-1.jpg",
   },
   {
-    title: "Kopi Bali",
+    title: "Gantungan Kunci",
     description: "Specialty arabica beans roasted weekly.",
     image: "/images/umkm-item-2.jpg",
   },
   {
-    title: "Rajutan Baju & Tas",
+    title: "Rajutan Tas",
     description: "Traditional woven fabric with gold accent.",
     image: "/images/umkm-item-3.jpg",
   },

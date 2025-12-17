@@ -129,7 +129,7 @@ export const Footer = ({ translations }: FooterProps) => {
         </div>
       </div>
       <div className="border-t border-white/10 px-6 py-6 text-center text-xs uppercase tracking-[0.3em] text-amber-200">
-        © {new Date().getFullYear()} Tampaksiring. All rights reserved.
+        © {new Date().getFullYear()} KKNT INSTIKI DESA TAMPAKSIRING. All rights reserved.
       </div>
     </footer>
   );

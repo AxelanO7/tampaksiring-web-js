@@ -34,7 +34,7 @@ export const Navbar = () => {
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 text-black">
               <MapPinIcon className="h-5 w-5" />
             </div>
-            Tampaksiring
+            Desa Wisata Tampaksiring
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
