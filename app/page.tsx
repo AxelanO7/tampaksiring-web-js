@@ -67,7 +67,7 @@ const testimonials = [
   {
     name: "Anita",
     origin: "Jakarta",
-    message: "Pengalaman tubing yang seru dan aman, pemandu ramah!",
+    message: "Pengalaman tubing yang seru dan aman, pemandunya ramah banget!",
   },
   {
     name: "Michael",
@@ -76,9 +76,9 @@ const testimonials = [
       "Gunung Kawi is breathtaking. The new tour layout is easy to follow.",
   },
   {
-    name: "Wayan",
-    origin: "Denpasar",
-    message: "UMKM lokalnya keren, kopi dan madu wajib dibawa pulang.",
+    name: "Baim",
+    origin: "Medan",
+    message: "UMKM lokalnya keren, pahatan kayunya sangat bagus dan rapi.",
   },
   {
     name: "Sarah",
