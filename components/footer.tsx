@@ -31,15 +31,17 @@ const InstagramIcon = () => (
   </svg>
 );
 
-const FacebookIcon = () => (
+const TiktokIcon = ({ className = "h-4 w-4" }: { className?: string }) => (
   <svg
     viewBox="0 0 24 24"
-    className="h-4 w-4"
+    className={className}
     role="presentation"
     aria-hidden="true"
     fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M22.675 0H1.325C.594 0 0 .593 0 1.326v21.348C0 23.407.594 24 1.325 24H12.82v-9.294H9.692V11.04h3.128V8.412c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763V11.04h3.587l-.467 3.665h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z" />
+    {/* Path Not Balok TikTok yang sudah diperbaiki */}
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.89-.35-4.2-.97-.06 3.42-.01 6.83-.02 10.25-.17 2.67-2.32 5.14-5.04 5.56-2.5.46-5.23-.71-6.52-2.89-1.43-2.28-1-5.58 1.01-7.4 1.25-1.16 3.01-1.6 4.66-1.35.01 1.45.01 2.91.01 4.36-1.17-.35-2.54-.11-3.41.8-.93.92-1.05 2.53-.29 3.63.74 1.16 2.21 1.7 3.51 1.34 1.44-.33 2.52-1.74 2.52-3.22-.01-4.88-.01-9.76-.01-14.64.01-.13.01-.26.01-.39z" />
   </svg>
 );
 
@@ -85,10 +87,10 @@ const socials = [
     href: siteConfig.links.instagram,
     icon: <InstagramIcon />,
   },
-  {
-    label: "Facebook",
-    href: siteConfig.links.facebook,
-    icon: <FacebookIcon />,
+{
+    label: "Tiktok",
+    href: siteConfig.links.Tiktok,
+    icon: <TiktokIcon />, // Memanggil komponen dari Bagian 1
   },
   {
     label: "YouTube",

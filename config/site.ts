@@ -15,9 +15,9 @@ export const siteConfig = {
   ],
   navMenuItems: [],
   links: {
-    whatsapp: "https://wa.me/6283834997026",
-    instagram: "https://www.instagram.com",
-    facebook: "https://www.facebook.com",
-    youtube: "https://www.youtube.com",
+    whatsapp: "https://wa.me/6283846920556",
+    instagram: "https://www.instagram.com/tampaksiring_desa?igsh=emU2OW93a2Q4czJl&utm_source=qr",
+    Tiktok: "https://www.tiktok.com/@desa.tampaksiring?_r=1&_t=ZS-92IgK62vdFn",
+    youtube: "https://youtube.com/@tampaksiring2514?si=-U0R-vKY7QwxW2w1",
   },
 };
